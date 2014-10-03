@@ -1,0 +1,132 @@
+<html>
+<head>
+	<title>CS194-26 project1</title>
+</head>
+<body>
+	<h1 align=center>CS194-26 Project1</h1>
+	<h2 align=right>by nonlocalStream</h2>
+	<h3>How it works:</h3>
+	<p> Image Pyramid with NCC
+		I use the NCC for estimating the alignments. If the image is small, use the exhaustive search with a displacment range of [-5,5]. If the image is big, use the image pyramid algorithm and recursively call the algorithm on images of half of the size.
+	<br>
+	<br>
+	<br>
+	<table align=center>
+	<tr>
+	    <td><img src="result-before-cathedral.jpg" height=40%></td>
+	    <td>====></td>
+	    <td><img src="result-cathedral.jpg"></td>
+	</tr>
+	<tr align="center">
+		<td></td>
+		<td></td>
+		<td>G: (5, 2) R: (12, 3)</td>
+	</tr>
+	</table>
+
+	<h3>Small JPEG results</h3>
+	<table id="high">
+	  <tr>
+	    <td><img src="result-monastery.jpg" width=100%></td>
+	    <td><img src="result-settlers.jpg" width=100%></td>
+	    <td><img src="result-tobolsk.jpg" width=100%></td>
+	  </tr>
+	  <tr align="center">
+	    <td>G: (-3, 2) R: (3, 2)</td>
+	    <td>G: (7, 0) R: (15, -1)</td>
+	    <td>G: (3, 3) R: (6, 3)</td>
+	  </tr>
+	  
+	</table>
+
+	<h3>Problem</h3>
+	<p> The above algorithm perform badly for emir.tiff. Thus for photos that have very different R G B channels, NCC on the original image won't suffice. As you can see, the man's clothes looks very different in R and B channels.</p>
+	<table>
+	  <tr>
+	  	<td>Red:<img src="emir-red.jpg" width=100%></td>  
+	  	<td>Green:<img src="emir-green.jpg" width=100%></td> 
+	  	<td>Blue:<img src="emir-blue.jpg" width=100%></td> 
+	  </tr>
+	 </table>
+	 <h4>Results of naive NCC:</h4>
+	 <table>
+	  <tr>
+	  	<td><img src="emir-GB.jpg" width=100%></td> 
+	  	<td><img src="emir-RB.jpg" width=100%></td>
+	  </tr>
+	  <tr>
+	  	<td align="center">Alignment of G and B channels</td>
+	  	<td align="center">Alignment of R and B channels</td>
+	  </tr>
+	</table>
+
+	</div>
+	<h3>Improvement with Edge Detection:</h3>
+	<p>The way I resolve the problem is to use edge detection in each recursion of the color pyramid. I use the matlab's sobel algorithem with a threshold of 0.08.</p>
+	<p>Because the edge of the object is similar in each of the R G B channel, the alignment is much better.</p>
+	<div align="center">
+		<h4>Sobel with a threshold of 0.08:</h4>
+		<img src="emir-sobel.jpg" width=500px>
+	</div>
+	<h4>Result of Improvement</h4>
+	<table>
+	  <tr>
+	  	<td><img src="result-emir-wosobel.jpg" width=100%></td>
+		<td><img src="result-emir-wsobel.jpg" width=100%></td>
+	  </tr>
+	  <tr>
+	  	<td align="center">Without edge detection</td>
+	  	<td align="center">With edge detection</td>
+	  </tr>
+	</table>
+
+
+	<h3>High Resolution Tiff results</h3>
+	<table>
+	  <tr>
+	    <td><img src="result-emir.jpg" width=100%></td>
+	    <td><img src="result-harvesters.jpg" width=100%></td>   
+	    <td><img src="result-lady.jpg" width=100%></td>
+	  </tr>
+	  <tr align="center">
+	  	<td>G: (51, 22), R: (112, -199)</td>
+	  	<td>G: (60, 17), R: (125, 11)</td>
+	  	<td>G: (56, 10), R: (119, 14)</td>
+	  </tr>
+	  <tr>
+	    <td><img src="result-melons.jpg" width=100%></td>
+	    <td><img src="result-onion_church.jpg" width=100%></td>
+	    <td><img src="result-bridge.jpg" width=100%></td>
+	  </tr>
+	  <tr align="center">
+	  	<td>G: (79, 10) R: (181, 11)</td>
+	  	<td>G: (52, 24) R: (107, 41)</td>
+	  	<td>G: (12, -8) R: (68, 5)</td>
+	  </tr>
+	  <tr>
+	    <td><img src="result-turkmen.jpg" width=100%></td>
+	    <td><img src="result-village.jpg" width=100%></td>
+	  </tr align="center">
+	  	<td>G: (57, 22) R: (118, 29)</td>
+	  	<td>G: (65, 10) R: (137, 21)</td>
+	  <tr>	
+	  </tr>
+	</table>
+
+	<h3>Other photos from Prokudin-Gorskii collection</h3>
+	<table>
+	  <tr>
+	    <td><img src="result-extra1.jpg" width=100%></td>
+	    <td><img src="result-extra2.jpg" width=100%></td>
+	    <td><img src="result-extra3.jpg" width=100%></td>
+	  </tr>
+	  <tr align="center">
+	  	<td>G: (15, -10), R: (134, -14)</td>
+	  	<td>G: (15, 6), R: (40, 1)</td>
+	  	<td>G: (21, 16) R: (61, 16)</td>
+	  </tr>
+	  
+	</table>
+	
+</body>
+</html>
