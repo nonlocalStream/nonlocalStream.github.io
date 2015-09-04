@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>CS194-26 Project6</title>
+	<link rel="stylesheet" style="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+	<!-- <div id="navigation">
+		<nav class="navbar navbar-default" role="navigation">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+    				<a class="navbar-brand" href="#">CS194-26 Project1</a>
+    	
+    			</div>
+      			<div class="nav navbar-nav navbar-right">
+      				<a class="navbar-brand" href="#">by nonlocalStream</a>
+    	
+     		 	</div>
+    		</div>
+		</nav>
+	</div> -->
+	<div id="panel">
+		<div class="panel" id="leftpanel">
+			<h1 align="center">CS194 Project6</h1>
+			<h2 align="center">Lighfield Camera!!</h2>
+			<div id="buttonlist">
+				<a href="#part0"><div class="button blue">Depth Refocusing</div></a>
+				<a href="#part1"><div class="button purple">Aperture Adjustment</div></a>
+				<a href="#part2"><div class="button green">Summary</div></a>
+				<a href="../index.html"><div class="button gray">Back</div></a>
+				<!-- <a href="#part3"><div class="button blue">Bells and Whistles</div></a> -->
+			</div>
+			<h5 align="right">By nonlocalStream<h5>
+		</div>
+		
+		<div class="panel" id="rightpanel">
+		<div class="header">
+				Chuqian Li cs194-kw
+			</div>
+			<div class="content">
+				<div id="part0">
+					<h3>Introduction</h3>
+					<p> Lightfield Camera is a new kind of camera doesn't only capture one simple shot. Instead, it captures the whole light field, namely how each ray in the space go. There're different ways of implementating light field camera. <a href="https://www.lytro.com/">Lytro</a>, which can capture the light field within one shot, is my best. While Lytro capture different views of each pixel, in this project our dataset uses different views of a whole photo.</p>
+					<h3>Dataset:</h3>
+					<p>The data of this project comes from <a href="http://lightfield.stanford.edu/lfs.html">Stanford Light Field Archive</a>. A set of photos is composed of 289 views taken for a single project from cameras arraged in a 17*17 grid. I used the Rectified and cropped images. 
+
+					<h3>Depth Refocusing</h3>
+					<p>According to <a href="http://graphics.stanford.edu/papers/lfcamera/lfcamera-150dpi.pdf">this paper</a> Section 4, refocusing can be done by shifting the photos of different view. A more intuitive way to understand this is: When we average all the photos without shifting, the objects far away would be aligned. Because they don't differ a lot with a small change of perspective. The objects near, however, would be blurred. We can align these near objects by shifting each view (camera postions) porportionally to their difference from the center view (center camera position). Say that the proportional factor is a. When a is larger, photos are shifted more towards center, the nearer the focus would be.</p>
+					<h3>Result:</h3>
+					<img src="http://i.imgur.com/imjhhZ2.gif">
+
+				</div>
+				<div id="part1">
+					<h3>Aperture Adjustment</h3>
+					<p>Aperture basically refers to how wide the crack where we allow the lights come in is. So we can simulate different apperture by averaging different numbers of views starting from center view. With only the center view, we get the smallest apperture. With more views averages, we get larger apperture.</p>
+					<img src="http://i.imgur.com/AreRLuF.gif">
+					<p>The other dataset (the amethyst) below doesn't work as well. This is because the object is far away so that different views are quite similar. So we don't get much blurred areas.</p>
+					<img src="http://i.imgur.com/0vgAkod.gif">
+				</div>
+				<div id="part2">
+					<h3>Summary</h3>
+					<p> Honestly, I stared at the paper for an insanely long time. Although I kind of got how light field with two planes works, I can't wrap my mind around how does two planes work in this project when a lot of variables are unknown. Finally, it turns out that an intuitive way of understanding refocusing gives beautifuls outputs much more easier than I thought. Reconstructing images from light field is amazing. I hope we can work with the light field contructed by microlenses because that's a very smart way to capture the rays. In a word, it's a pretty interesting experience to hack around with lights and have a new perspective about focus and aperture.</p>
+					
+
+				</div>
+
+			<!-- <div id="part3">
+				<h3>Bell and Whistles</h3>
+				
+		    </div> -->
+				
+		</div>
+		
+	</div>
+	<div id="footer">
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

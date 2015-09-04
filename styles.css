@@ -1,0 +1,319 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+
+hr{
+    border: 0;
+    height: 1px;
+    /*background: rgb(0,0,0);*/
+    background-image: -webkit-linear-gradient(left, rgb(255,255,255), rgb(100,100,100),
+                                                    rgb(0,0,0), rgb(100,100,100),
+                                                    rgb(255,255,255));
+    background-image: -webkit-linear-gradient(left, rgb(255,255,255), rgb(100,100,100),
+                                                    rgb(0,0,0), rgb(100,100,100),
+                                                    rgb(255,255,255));
+    background-image: -moz-linear-gradient(left, rgb(255,255,255), rgb(100,100,100),
+                                                    rgb(0,0,0), rgb(100,100,100),
+                                                    rgb(255,255,255));
+    background-image: -ms-linear-gradient(left, rgb(255,255,255), rgb(100,100,100),
+                                                    rgb(0,0,0), rgb(100,100,100),
+                                                    rgb(255,255,255));
+    background-image: -o-linear-gradient(left, rgb(255,255,255), rgb(100,100,100),
+                                                    rgb(0,0,0), rgb(100,100,100),
+                                                    rgb(255,255,255));
+}
+
+#header{
+  width: 100%;
+}
+
+#header img {
+   width:80%;
+   margin-left:10%;
+}
+
+#header h1{
+  color: black;
+  font-family: arial;
+  font-size: 7em;
+  text-decoration: none;
+  text-align: center;
+}
+#header a:hover{
+  text-decoration: none;
+}
+
+#header h1:hover{
+  color: #34ceab;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+   cursor:pointer;
+  
+  
+}
+#header img:hover {
+   cursor:pointer;
+   -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  -webkit-filter: blur(2px);
+
+}
+
+h3:hover{
+  color: #34ceab;
+    
+}
+.panel{
+display: inline-block;
+  
+}
+#left{
+  /*position: fixed;*/
+  width: 30%;
+  max-width: 250px;
+  min-width: 100px;
+  /*background-color: black;*/
+  height: auto;
+  overflow: hidden;
+  float: left;
+}
+#right{
+  float: left;
+  width: 65%;
+  margin-left: 20px;
+  height: auto;
+  overflow: hidden;
+}
+
+#cssmenu {
+  position: relative;
+  margin: 0;
+  font-family: 'Roboto Condensed';
+  line-height: 1;
+  width: 100%;
+}
+
+.align-right {
+  float: right;
+}
+
+#cssmenu a{
+  color:black;
+}
+#cssmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+#cssmenu ul li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu ul li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#cssmenu ul li a{
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+
+#cssmenu > ul > li > a {
+  /*color: #dddddd;*/
+  text-transform: uppercase;
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  
+  /*border-top: 1px solid #000000;*/
+  /*border-left: 1px solid #000000;*/
+  /*border-right: 1px solid #000000;*/
+  /*background: #222222;*/
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  position: relative;
+}
+#cssmenu > ul > li:first-child > a {
+  /*border-top-left-radius: 3px;*/
+  /*border-top-right-radius: 3px;*/
+}
+#cssmenu > ul > li:last-child > a {
+  /*border-bottom-left-radius: 3px;*/
+  /*border-bottom-right-radius: 3px;*/
+  /*border-bottom: 1px solid #000000;*/
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li.open > a,
+#cssmenu > ul > li.active > a {
+  /*background: #151515;*/
+  /*color: #ffffff;*/
+}
+#cssmenu ul > li.has-sub > a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  /*border-top: 13px solid #000000;*/
+  /*border-botom: 13px solid transparent;*/
+  /*border-left: 125px solid transparent;*/
+  /*border-right: 125px solid transparent;*/
+  left: 0;
+  bottom: -13px;
+  bottom: 0px;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -ms-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+#cssmenu ul > li.has-sub > a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  /*border-top: 13px solid #151515;*/
+  /*border-botom: 13px solid transparent;*/
+  /*border-left: 125px solid transparent;*/
+  /*border-right: 125px solid transparent;*/
+  left: 0;
+  bottom: -12px;
+  bottom: -1px;
+  z-index: 3;
+  opacity: 0;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -ms-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+#cssmenu ul > li.has-sub::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top-color: #dddddd;
+  z-index: 2;
+  right: 20px;
+  top: 24.5px;
+  pointer-events: none;
+}
+#cssmenu ul > li:hover::after,
+#cssmenu ul > li.active::after,
+#cssmenu ul > li.open::after {
+  /*border-top-color: #ffffff;*/
+}
+#cssmenu ul > li.has-sub.open > a::after {
+  opacity: 1;
+  bottom: -13px;
+}
+#cssmenu ul > li.has-sub.open > a::before {
+  opacity: 1;
+  bottom: -12px;
+}
+#cssmenu ul ul {
+  display: none;
+}
+#cssmenu ul ul li {
+  /*border-left: 1px solid #ccc;*/
+  /*border-right: 1px solid #ccc;*/
+}
+#cssmenu ul ul li a {
+  /*background: #f1f1f1;*/
+  display: block;
+  position: relative;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #dddddd;
+  color: #777777;
+  font-weight: 300;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+#cssmenu ul ul li:first-child > a {
+  padding-top: 18px;
+}
+#cssmenu ul ul ul li {
+  border: 0;
+}
+#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li.open > a,
+#cssmenu ul ul li.active > a {
+  /*background: #e4e4e4;*/
+  color: #666666;
+}
+#cssmenu ul ul > li.has-sub > a::after {
+
+  border-top: 13px solid #dddddd;
+}
+#cssmenu ul ul > li.has-sub > a::before {
+  border-top: 13px solid #e4e4e4;
+}
+#cssmenu ul ul ul li a {
+  padding-left: 30px;
+}
+#cssmenu ul ul > li.has-sub::after {
+  top: 18.5px;
+  border-width: 6px;
+  border-top-color: #777777;
+}
+#cssmenu ul ul > li:hover::after,
+#cssmenu ul ul > li.active::after,
+#cssmenu ul ul > li.open::after {
+  border-top-color: #666666;
+}
+
+#cssmenu ul .has-sub a:hover{
+  font-weight: 400;
+  border-bottom: 8px solid black;
+  /*background-color: black;*/
+  /*color: white;*/
+}
+#cssmenu ul li .open{
+  font-weight: 400;
+  border-bottom: 8px solid black;
+  /*background-color: black;*/
+  /*color: white;*/
+}
+
+#cssmenu ul .no-sub a:hover{
+  font-weight: 400;
+  background-color: black;
+  color: #45dfbc;;
+}
+
+#cssmenu ul .no-sub a:active{
+  font-weight: 400;
+  background-color: black;
+  color: white;
+}
+
+#cssmenu li.active a{
+  font-weight: 400;
+  background-color: black;
+  color: #45dfbc;;
+}

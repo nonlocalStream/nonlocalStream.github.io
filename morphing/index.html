@@ -1,0 +1,212 @@
+<html>
+<head>
+	<title>CS194-26 Project5</title>
+	<link rel="stylesheet" style="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+	<!-- <div id="navigation">
+		<nav class="navbar navbar-default" role="navigation">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+    				<a class="navbar-brand" href="#">CS194-26 Project1</a>
+    	
+    			</div>
+      			<div class="nav navbar-nav navbar-right">
+      				<a class="navbar-brand" href="#">by nonlocalStream</a>
+    	
+     		 	</div>
+    		</div>
+		</nav>
+	</div> -->
+	<div id="panel">
+		<div class="panel" id="leftpanel">
+			<h1 align="center">CS194 Project5</h1>
+			<h2 align="center">Face Morphing</h2>
+			<div id="buttonlist">
+				<a href="#part0"><div class="button blue">The Mid Face</div></a>
+				<a href="#part1"><div class="button purple">The Morph Sequence</div></a>
+				<a href="#part2"><div class="button green">The "Mean Face"</div></a>
+				<a href="#part3"><div class="button blue">Caricature</div></a>
+				<a href="#part4"><div class="button purple">Change the gender</div></a>
+				<a href="../index.html"><div class="button gray">Back</div></a>
+			</div>
+			<h5 align="right">By nonlocalStream<h5>
+		</div>
+		
+		<div class="panel" id="rightpanel">
+		<div class="header">
+				Chuqian Li cs194-kw
+			</div>
+			<div class="content">
+				<div id="part0">
+					<h3>The Mid Face</h3>
+					<p>The shape of a face can be defined by set of keypoints on eyes, mouth and nose etc. We can split a face into smaller subset by meshing, i.e. forming a triangle of, these key points. To get a mid face, we calculate the mid shape and morph the two inputs into this mid shape. Combine the pixels by taking 50% opacity from each piture.</p>
+					<table>
+					  <tr>
+					  	<td width=50%><img src="http://i.imgur.com/DJVRygm.jpg"  class="tableimg"></td>
+					  	<td width=50%><img src="img/face2.jpg"  class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Input Face 1</td>
+						<td align="center">Input Face 2</td>
+					  </tr>
+					  <tr>
+					  	<td width=50%><img src="result/mid-face.jpg"  class="tableimg"></td>
+					  	<td width=50%><img src="result/mid-face-annotated.jpg"  class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">The mid face</td>
+						<td align="center">The key points of mid shape</td>
+					  </tr>
+					</table>
+
+				</div>
+				<div id="part1">
+					<h3>The Morph Sequence</h3>
+					<p>We assign different shape warping factor and opacity factor to get a sequence of transition from one face to another.</p>
+					<img src="result/sequence.jpg">
+					<h4>The Resulting Squence</h4>
+					<!-- <img src="result/beauty2.gif"> -->
+					<img src="http://i.imgur.com/dh0dnUw.gif">
+					<p> The transition of face features is smooth but there are some noticeable halos at the edges of face and neck.</p>
+				</div>
+				<div id="part2">
+					<h3>The "Mean Face"</h3>
+					<p> Dataset retrieved from http://www2.imm.dtu.dk/~aam/datasets/datasets.html</p>
+					<p> To get a informative average face of a population, we calculate the mean shape and morph each face into this mean shape.</p>
+					<table>
+					  <tr>
+					  	<td><img src="img/08-1f.jpg" width=33% class="tableimg"></td>
+						<td><img src="img/12-1f.jpg" width=33% class="tableimg"></td>
+						<td><img src="img/22-1f.jpg" width=33% class="tableimg"></td>	
+					  </tr>
+					  <tr>
+					  	<td align="center">Examples of Original Dataset</td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/morphed_female1.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/morphed_female2.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/morphed_female3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original Faces morphed into average shape</td>
+					  </tr>
+
+					  
+					</table>
+					<p>Overlap the morphed faces and we get the beautiful mean female face.</p>
+					  <img src="result/average_female.jpg">
+					<h4>With the same method, we also get the mean male face of the data set</h4>
+					<table>
+					  <tr>
+					  	<td><img src="img/38-1m.jpg" width=33% class="tableimg"></td>
+						<td><img src="img/39-1m.jpg" width=33% class="tableimg"></td>
+						<td><img src="img/40-1m.jpg" width=33% class="tableimg"></td>	
+					  </tr>
+					  <tr>
+					  	<td align="center">Examples of Original Dataset</td>
+					</table>
+					
+					  <img src="result/average_male.jpg">
+
+
+					<p>It' surprising to see the ending result is pretty aesthetically appealing. Mean face seems better with a bigger dataset. There're 7 images in female dataset and 33 images in male dataset.</p>
+
+					<h4> Me and Mean</h4>
+					<table>
+						<tr>
+					  	<td><img src="http://i.imgur.com/zWsY0pV.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/average_female.jpg" width=100% class="tableimg"></td>
+						
+					  </tr>
+					  <tr>
+					  	<td align="center">My Face</td>
+					  	<td align="center">Average female face</td>
+					  </tr>
+					  
+					  <tr>
+					  	<td><img src="result/morphed_me.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/morphed_ave.jpg" width=100% class="tableimg"></td>
+						
+					  </tr>
+					  <tr>
+					  	<td align="center">Me in the average female shape</td>
+					  	<td align="center">Average female face in my shape</td>
+					</table>
+
+				</div>
+				<div id="part3">
+					<h3>Caricature</h3>
+					<p>By extrapolating the shape of my face away from the mean shape, I can exaggerate my facial features. And voila! A caricature of myself (Not appealing at all though).</p>
+					<h3>Basically I morph the shape of my face into the newShape = myShape + (myShape - meanShape) * alpha</h3>
+					<table>
+					  <tr>
+					  	<td><img src="result/cari_me-0.2.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="result/cari_me-0.4.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/cari_me-0.6.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/cari_me-0.8.jpg" width=100% class="tableimg"></td>
+					
+					  </tr>
+					  <tr>
+					  	<td align="center">alpha=0.2</td>
+					  	<td align="center">alpha=0.4</td>
+					  	<td align="center">alpha=0.6</td>
+					  	<td align="center">alpha=0.8</td>
+					  </tr>
+					</table>
+					<p>We can see that when alpha approaches 1.0, things gets messes up. Some part of my facial features become very triangular.</p>
+					<table>
+					  <tr>
+					  	<td><img src="result/cari_me-1.0.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="result/cari_me-1.5.jpg" width=100% class="tableimg"></td>
+					
+					  </tr>
+					  <tr>
+					  	<td align="center">alpha=1.0</td>
+					  	<td align="center">alpha=1.5</td>
+					  	
+					  </tr>
+					</table>
+
+				
+			</div>
+
+			<div id="part4">
+				<h3>Change the gender</h3>
+				<p>I morphed myself with the average male face in three different ways:</p>
+				<table>
+					<tr>
+				  	<td><img src="result/male-me-only-color.jpg" width=100% class="tableimg"></td>
+					<td><img src="result/male-me-only-shape.jpg" width=100% class="tableimg"></td>
+					<td><img src="result/male-me.jpg" width=100% class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Morph only the shape</td>
+				  	<td align="center">Morph only the color</td>
+				  	<td align="center">Morph both shape and color</td>
+				  </tr>
+				  
+				</table>
+
+				<p>Apparently, morphing both the shape and color gives the best result.</p>
+				<h4>End words:</h4>
+				<p>There are a lot of little things that I need to deal with like annotate the key points and extracting annoatations from asf files. But when the results like the morphing video and average face come out (after a long compile time), it's really amazing!</p>
+		    </div>
+				
+		</div>
+		
+	</div>
+	<div id="footer">
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

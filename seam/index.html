@@ -1,0 +1,244 @@
+<html>
+<head>
+	<title>CS194-26 Project4</title>
+	<link rel="stylesheet" style="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+
+	<!-- <div id="navigation">
+		<nav class="navbar navbar-default" role="navigation">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+    				<a class="navbar-brand" href="#">CS194-26 Project1</a>
+    	
+    			</div>
+      			<div class="nav navbar-nav navbar-right">
+      				<a class="navbar-brand" href="#">by nonlocalStream</a>
+    	
+     		 	</div>
+    		</div>
+		</nav>
+	</div> -->
+	<div id="panel">
+		<div class="panel" id="leftpanel">
+			<h1 align="center">CS194 Project4</h1>
+			<h2 align="center">Seam Carving</h2>
+			<div id="buttonlist">
+				<a href="#part0"><div class="button blue">Horizontal Carving</div></a>
+				<a href="#part1"><div class="button purple">Vertical Carving</div></a>
+				<a href="#part2"><div class="button green">Carving Artifacts</div></a>
+				<a href="../index.html"><div class="button gray">Back</div></a>
+			</div>
+			<h5 align="right">By nonlocalStream<h5>
+		</div>
+		
+		<div class="panel" id="rightpanel">
+		<div class="header">
+				Chuqian Li cs194-kw
+			</div>
+			<div class="content">
+				<h4>Except the house and the couch image appear in the project specification, all the images are taken by myself. </h4>
+				<div id="part0">
+					<h3>Horizontal Carving</h3>
+					<h4>Explanation of the algorithm:</h4>
+					<p>I use the e1 energy function. The e1 energy matrix is gained by adding up the gradient energy gx and gradient energy gy. gx = the absolute value of the grayscaled image passed by a [-1,0,1] filter. gx = the absolute value of the grayscaled image passed by a [-1;0;1] filter.</p>
+					<p>After mapping the original image to its gradient energy matrix. We get a vertical seam by using dynamic programming to calulcate the seam that minimize the sum of energy. This would be the most unnoticeable seam that can be removed from the picture to reduce the with.</p>
+					<table>
+					  <tr>
+					  	<td><img src="img/lantern.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/lantern_energy.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/lantern_seam.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Energy Mapping</td>
+					  	<td align="center">Least-energy Vertical Seam</td>
+					  </tr>
+					</table>
+					
+					<table>
+					  <tr>
+					  	<td><img src="img/house_by_jim_mccann.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/house_by_jim_mccann_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/house_by_jim_mccann_h_3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Carve 10% of the width</td>
+					  	<td align="center">Carve 30% of the width</td>
+					  </tr>
+					</table>
+					<table>
+					  <tr>
+					  	<td><img src="img/jelly2.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/jelly2_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/jelly2_h_3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Carve 10% of the width</td>
+					  	<td align="center">Carve 30% of the width</td>
+					  </tr>
+					</table>
+					<h4>Comment: Seam Carving seems to be very good at handle the photos with repetive patterns, aka without distinguishing features.</h4>
+					<table>
+					  <tr>
+					  	<td><img src="img/bench.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/bench_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/bench_h_3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Carve 10% of the width</td>
+					  	<td align="center">Carve 30% of the width</td>
+					  </tr>
+					</table>
+
+
+				</div>
+				<div id="part1">
+					<h3>Vertical Carving</h3>
+					<table>
+					  <tr>
+					  	<td><img src="img/yo_couch_by_yuan2003.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/yo_couch_by_yuan2003_v_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/yo_couch_by_yuan2003_v_3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Carve 10% of the height</td>
+					  	<td align="center">Carve 30% of the height</td>
+					  </tr>
+					</table>
+
+					<table>
+					  <tr>
+					  	<td><img src="img/jelly1.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/jelly1_v_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/jelly1_v_3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Carve 10% of the height</td>
+					  	<td align="center">Carve 30% of the height</td>
+					  </tr>
+					</table>
+				    <table>
+					  <tr>
+					  	<td><img src="img/tree.jpg" width=100% class="tableimg"></td>
+					  	<td><img src="results/tree_v_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/tree_v_3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Original</td>
+					  	<td align="center">Carve 10% of the height</td>
+					  	<td align="center">Carve 30% of the height</td>
+					  </tr>
+					</table>
+				</div>
+				<div id="part2">
+					<h3>Carving Artifacts (Failures)</h3>
+					
+					<h4>Flowers by the window</h4>
+					<img src="img/flower2.jpg">
+					<h4>Original Image</h4>
+					<table>
+					  <tr>
+					  	<td><img src="results/flower2_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/flower2_h_3.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/flower2_h_5.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Carve 10% of the width</td>
+					  	<td align="center">Carve 30% of the width</td>
+						<td align="center">Carve 50% of the width</td>
+					  </tr>
+					  <tr>
+					  	<td><img src="results/flower2_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/flower2_h_3.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/flower2_h_5.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Carve 10% of the height</td>
+					  	<td align="center">Carve 30% of the height</td>
+						<td align="center">Carve 50% of the height</td>
+					  </tr>
+					</table>
+					<h5>Comment: We can see that when we crop off too much with seam carving, it will create some cropping effect and leave out the important features at the sides, which is not diserable.</h5>
+
+					<h4>Person in the air</h4>
+					<img src="img/person1.jpg">
+					<h4>Original Image</h4>
+					<table>
+					  <tr>
+					  	<td><img src="results/person1_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/person1_h_3.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/person1_h_5.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Carve 10% of the width</td>
+					  	<td align="center">Carve 30% of the width</td>
+						<td align="center">Carve 50% of the width</td>
+					  </tr>
+					  <tr>
+					  	<td><img src="results/person1_v_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/person1_v_3.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/person1_v_5.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Carve 10% of the height</td>
+					  	<td align="center">Carve 30% of the height</td>
+						<td align="center">Carve 50% of the height</td>
+					  </tr>
+					</table>
+					<h5>Comment: The skinny frame (high frequency feature) is cut off so that the man is hanging in the air.</h5>
+
+				    <h4>Faces = Epic Failure</h4>
+					<img src="img/person2.jpg">
+					<h4>Original Image</h4>
+					<table>
+					  <tr>
+					  	<td><img src="results/person2_h_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/person2_h_3.jpg" width=100% class="tableimg"></td>
+						
+					  </tr>
+					  <tr>
+					  	<td align="center">Carve 10% of the width</td>
+					  	<td align="center">Carve 30% of the width</td>
+						
+					  </tr>
+					  <tr>
+					  	<td><img src="results/person2_v_1.jpg" width=100% class="tableimg"></td>
+						<td><img src="results/person2_v_3.jpg" width=100% class="tableimg"></td>
+						
+					  </tr>
+					  <tr>
+					  	<td align="center">Carve 10% of the height</td>
+					  	<td align="center">Carve 30% of the height</td>
+						
+					  </tr>
+					</table>
+
+				
+
+				</div>
+
+				<h4>After thoughts</h4>
+				<p>Horizontal Carving works much better than Vertical Carving. The artifacts created by carving happen mostly on diagonal lines in th e picture. If I have time, I would try alternative way of removing the seams such as removing the seams but average its value to its neighers.</p>
+			</div>
+		</div>
+		
+	</div>
+	<div id="footer">
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

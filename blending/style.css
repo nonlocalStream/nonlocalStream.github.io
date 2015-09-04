@@ -1,0 +1,195 @@
+
+html, body { 
+  background: url(images/background2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+	margin-top: 0px;
+}
+
+p {
+  padding: 3%;
+  font-size: 1em;
+}
+#navigation {
+	width: 100%;
+	position: fixed;
+	margin-top: 0px;
+	z-index: 2;
+}
+
+
+#panels .panel {
+	overflow: hidden;
+}
+
+#leftpanel {
+	margin-left: 0px;
+    padding: auto;
+	width:30%;
+	float: left;
+  	height: 100%;
+  	/*background-color: rgba(0,0,0,0.5);*/
+  	background: -moz-linear-gradient(left,  rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.73) 99%, rgba(0,0,0,0.73) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.29)), color-stop(99%,rgba(0,0,0,0.73)), color-stop(100%,rgba(0,0,0,0.73))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0.29) 0%,rgba(0,0,0,0.73) 99%,rgba(0,0,0,0.73) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(0,0,0,0.29) 0%,rgba(0,0,0,0.73) 99%,rgba(0,0,0,0.73) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(0,0,0,0.29) 0%,rgba(0,0,0,0.73) 99%,rgba(0,0,0,0.73) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(0,0,0,0.29) 0%,rgba(0,0,0,0.73) 99%,rgba(0,0,0,0.73) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a000000', endColorstr='#ba000000',GradientType=1 ); /* IE6-9 */
+	border: none;
+  	color: white;
+  	position: fixed;
+  	z-index: 1;
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.8);
+}
+#leftpanel .footer{
+	height: auto;
+	position: relative;
+	margin-bottom:0px;
+}
+.button{
+	height: 50px;
+	weigth: 100%;
+    
+}
+
+.button:hover{
+	/*background-color: rgba(255,255,255,0.5);*/
+	/*-webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */*/
+    /*transition: background-color 2s;*/
+    
+  	
+}
+
+
+#rightpanel {
+	padding: 20px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	width: 70%;
+	float: right;
+	height: auto;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.22) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0.22))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.22) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.22) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.22) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.22) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#38ffffff',GradientType=0 ); /* IE6-9 */
+	border: none;
+
+	/*background-color: rgba(255,255,255,0.5);*/
+	/*box-shadow: 20px 20px 10px  rgba(255,255,255,0.5) inset;*/
+  	
+}
+
+#rightpanel img{
+	box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+	width: 70%;
+	margin: 3% 15%;
+	border-radius: 5px;
+
+
+	}
+#rightpanel .tableimg{
+	width: 100%;
+	margin: 10px;
+	border-radius: 0px;
+
+
+}
+
+#top-content {
+	margin-top: 80px;
+}
+#buttonlist {
+	margin: 20% auto;
+}
+.button {
+    min-height: 1.5em;
+    display: inline-block;
+    padding: 12px 36px;
+    width: 80%;
+    margin: 10px 10%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    font-family: arial;
+    color: #FFF;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
+    
+    background: #434343;
+    border: 1px solid #242424;
+   
+    -webkit-border-radius: 4px;
+     -khtml-border-radius: 4px;
+       -moz-border-radius: 4px;
+         -o-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+     -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+       -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+         -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+    -webkit-transition: all 0.1s linear;
+     -khtml-transition: all 0.1s linear;
+       -moz-transition: all 0.1s linear;
+         -o-transition: all 0.1s linear;
+            transition: all 0.1s linear;
+}
+.button:hover {
+    -webkit-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+     -khtml-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+       -moz-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+         -o-box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+.button:active {
+    -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+     -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px,inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+       -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+         -o-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+            box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+.shine {
+    display: block;
+    position: relative;
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    padding: 0px 12px;
+    top: -12px;
+    left: -24px;
+    height: 1px;
+    -webkit-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+     -khtml-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+       -moz-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+         -o-box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+            box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+     -khtml-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+}
+.button:hover .shine {left: 24px;}
+.button:active .shine {opacity: 0;}
+
+.button.gray {background: #555;}
+.button.blue {background: #3a617e;}
+.button.green {background: #477343;}
+.button.red {background: #723131;}
+.button.purple {background: #4b3f5e;}
+.button.orange {background: #624529;}
+​

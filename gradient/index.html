@@ -1,0 +1,146 @@
+<html>
+<head>
+	<title>CS194-26 Project5</title>
+	<link rel="stylesheet" style="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+	<div id="panel">
+		<div class="panel" id="leftpanel">
+			<h1 align="center">CS194 Final Assignments</h1>
+			<div id="buttonlist">
+				<a href="#part0"><div class="button blue">Poisson Blending</div></a>
+				<a href="#part1"><div class="button purple">Mixed Blending</div></a>
+				<a href="../index.html"><div class="button gray">Back</div></a>
+			</div>
+			<h5 align="right">By nonlocalStream<h5>
+		</div>
+		
+		<div class="panel" id="rightpanel">
+		<div class="header">
+				Chuqian Li cs194-kw
+		</div>
+		<div class="content">			
+			<h3>Gradient Domain Editing</h3>
+			<p>Our problem is to blend a picture naturally into another background. The naive appoach of overwriting the background is easily noticeable to eyes because the tone and colors on the border doesn't match. Human eyes pays lots of attention to gradient(the change of intensity) and edges. According to this, we construct the pixels of the new image so that they ensures that they both match the gradient inside the source image and has close color to the pixels on the edge of the background image.</p>
+
+			<div id="part0">
+				<h3>Poisson Blending</h3>
+			    <table>
+				  <tr>
+				  	<td width=50%><img src="results/cat_person_source.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/cat_person_target.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Source</td>
+					<td align="center">Target</td>
+				  </tr>
+				  <tr>
+				  	<td width=50%><img src="http://i.imgur.com/FrZTRam.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/cat_person_poisson.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Direct overwriting the source to the target</td>
+					<td align="center">Poisson Blending</td>
+				  </tr>
+				</table>
+				<p>Poisson Blending seek to find the values of the blended part of the output images to minimize the cost of gradients. More specifically, we try to find the v values of the output image so that:<p>
+				<img src="http://i.imgur.com/DQNiDQI.png">
+				<p>where S is the source image and t is the target image. We solve this by finding the least square solution.</p>
+				<h3>More Poisson Blending Results</h3>
+			    <table>
+				  <tr>
+				  	<td width=50%><img src="results/beach_huan_source.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/beach_huan_target.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Source</td>
+					<td align="center">Target</td>
+				  </tr>
+				  <tr>
+				  	<td width=50%><img src="results/beach_huan_direct.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/beach_huan_poisson.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Direct overwriting the source to the target</td>
+					<td align="center">Poisson Blending</td>
+				  </tr>
+				</table>
+
+				Failure:
+				<table>
+				  <tr>
+				  	<td width=50%><img src="results/dog_meet_source.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="http://i.imgur.com/Ycdlxwp.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Source</td>
+					<td align="center">Target</td>
+				  </tr>
+				  <tr>
+				  	<td width=50%><img src="results/dog_meet_direct.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/dog_meet_mixed.jpg"  class="tableimg"></td>
+				  </tr>
+				</table>
+				<p>This one fails because the background of the source image is red. So the result of least-square differs a lot accross RGB. Thus the result image has a lack of red pixels.</p>
+				<img src='results/mixed_gradient_failutre.jpg'>
+			</div>
+
+			<div id="part1">
+				<h3>Mixed Blending</h3>
+			    <p>Unlike Poisson Blending which only look at the source gradient inside the selected source range, Mixed Blending takes into account both source gradient and target gradient and use the one that has a larger absolute value as a revised version of gradient function. This comes handy when we want to add a texture or a tatoo to the background image instead of covering it.<p>
+				<img src="http://i.imgur.com/hInBpLw.png">
+
+				<h3>Mixed Blending Results</h3>
+			    <table>
+				  <tr>
+				  	<td width=50%><img src="results/cat_fish_source.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="http://i.imgur.com/PvoAmV8.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Source</td>
+					<td align="center">Target</td>
+				  </tr>
+				  <tr>
+				  	<td width=50%><img src="results/cat_fish_direct.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/cat_fish_mixed.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Direct overwriting the source to the target</td>
+					<td align="center">Mixed Blending</td>
+				  </tr>
+				</table>
+
+			    <table>
+				  <tr>
+				  	<td width=50%><img src="results/dog_meet_source.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="http://i.imgur.com/gipGLDl.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Source</td>
+					<td align="center">Target</td>
+				  </tr>
+				  <tr>
+				  	<td width=50%><img src="results/dog_meet_direct.jpg"  class="tableimg"></td>
+				  	<td width=50%><img src="results/dog_meet_mixed.jpg"  class="tableimg"></td>
+				  </tr>
+				  <tr>
+				  	<td align="center">Direct overwriting the source to the target</td>
+					<td align="center">Mixed Blending</td>
+				  </tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<html>
+<head>
+	<title>CS194-26 Project3</title>
+	<link rel="stylesheet" style="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+	<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    ...
+  </nav>
+</div>
+
+	<!-- <div id="navigation">
+		<nav class="navbar navbar-default" role="navigation">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+    				<a class="navbar-brand" href="#">CS194-26 Project1</a>
+    	
+    			</div>
+      			<div class="nav navbar-nav navbar-right">
+      				<a class="navbar-brand" href="#">by nonlocalStream</a>
+    	
+     		 	</div>
+    		</div>
+		</nav>
+	</div> -->
+	<div id="panel">
+		<div class="panel" id="leftpanel">
+			<h1 align="center">CS194 Project3</h1>
+			<h2 align="center">Fun with frequencies</h2>
+			<div id="buttonlist">
+				<a href="#part0"><div class="button blue">Warmup</div></a>
+				<a href="#part1"><div class="button purple">Hybrid</div></a>
+				<a href="#part2"><div class="button green">Stacks</div></a>
+				<a href="#part3"><div class="button blue">Blending</div></a>
+				<a href="../index.html"><div class="button gray">Back</div></a>
+			</div>
+			<h5 align="right">By nonlocalStream<h5>
+		</div>
+		
+		<div class="panel" id="rightpanel">
+		<div class="header">
+				Chuqian Li cs194-kw
+			</div>
+			<div class="content">
+				<div id="part0">
+					<h3>Part 0: Warmup</h3>
+					<p>I always regret that I didn't focus well on my dog's eye in this photo. Now it's much better by applying an unsharp masking technique.</p>
+					<img src="sharpen/dog.jpg">
+					<p align="center">Original</p>
+					<img src="sharpen/dog2.jpg">
+					<p align="center">Sharpened: a = 2</p>
+
+				</div>
+				<div id="part1">
+					<h3>Part1: Hybrid Images</h3>
+					<h4>Favorite Result: </h4>
+					<img src="hybrid/me-doge-gg-hybrid.jpg">
+					<h5 align='center'>Me and my doggie</h5>
+					<img src="hybrid/fft1.jpg">
+					<h5 align='center'>The original images and their FFT images</h5>
+					<img src="hybrid/fft2.jpg">
+					<h5 align='center'>The filtered images and their FFT images</h5> 
+					<h4>Explanation:</h4>
+					<p>I apply a low-pass filter to one image and a high-pass filter. The low-pass filter is implemented by a gaussian filter. The high-pass filter is obtained by substracting the low-passed image from the original image. As we can see from the FFT image, picture1 only contains the low frequencies after being filtered and picture2 contains less low frequencies after being filter. Put two components together, we get a hybrid image that looks like my selfie when watched in distance and my dog when watched nearby.</p>
+					<h4>More Results:</h4>
+					<h4>A catman</h4>
+					<table>
+					  <tr>
+						<td><img src="hybrid/Dereck-nutmeg-hybrid.jpg" class="tableimg"></td>
+						<td><img src="hybrid/Dereck-nutmeg-hybrid2.jpg" class="tableimg"></td>
+					  </tr>
+					</table>
+					<h4>Doge's sassy faces</h4>
+					<img src="hybrid/fail1.jpg">
+					<p>This one fails at first. A brief look at the FFT images tell us the reason. The low-pass component still contain a lot of high-frequencies. So we need a lower cuttoff frequecy for the low-pass filter.</p>
+					<img src="hybrid/fail2.jpg">
+					<img src="hybrid/doges-hybrid.jpg">
+					<p>This one is much better. But we since it's hard to align both the body and faces. It's doesn't hybrid very naturally.</p>
+					<h4>Bell and Whistles</h4>
+					<table>
+					  <tr>
+					  	<td width=50%><img src="hybrid/me-doge-cc-hybrid.jpg"  class="tableimg"></td>
+					  	<td width=50%><img src="hybrid/me-doge-cg-hybrid.jpg"  class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Both components in color</td>
+						<td align="center">Only the high-pass component in color</td>
+					  </tr>
+					  <tr>
+					  	<td width=50%><img src="hybrid/me-doge-gc-hybrid.jpg"  class="tableimg"></td>
+					  	<td width=50%><img src="hybrid/me-doge-gg-hybrid.jpg"  class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td align="center">Only the low-pass component in color</td>
+					  	<td align="center">Both components in gray</td>
+					  </tr>
+					</table>
+					<p>It seems that "only the low-pass component in color" has a best effect and "only the high-pass component in color" leads to the worst.</p>
+				</div>
+				<div id="part2">
+					<h3>Part 2: Gaussian and Laplacian Stacks</h3>
+					
+					<h4>A cool painting<h4>
+					<table>
+					   <tr>
+					  	<td align="center">Gaussian Stack</td>
+					  	<td align="center">Laplacian Stack</td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/skell-gP-1.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/skell-lP-1.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/skell-gP-2.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/skell-lP-2.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/skell-gP-3.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/skell-lP-3.jpg" width=100% class="tableimg"></td>
+					  </tr>
+
+					  <tr>
+					  	<td><img src="result/skell-gP-5.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/skell-lP-5.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  
+					</table>
+
+					<h4>Hybrid</h4>
+					<table>
+					   <tr>
+					  	<td align="center">Gaussian Stack</td>
+					  	<td align="center">Laplacian Stack</td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/hybrid-gP-1.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/hybrid-lP-1.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/hybrid-gP-2.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/hybrid-lP-2.jpg" width=100% class="tableimg"></td>
+					  </tr>
+
+					  <tr>
+					  	<td><img src="result/hybrid-gP-4.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/hybrid-lP-4.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					  <tr>
+					  	<td><img src="result/hybrid-gP-6.jpg" width=100% class="tableimg"></td>
+						<td><img src="result/hybrid-lP-6.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					</table>
+
+					<p>We can see that the head and tail of the laplacian stack correspond to the two components in the hybrid image, though the tail of the laplacian stack still contains some of the high-pass component.</p>				
+
+				</div>
+				<div id="part3">
+					<h3>Multiresolution Blending</h3>
+					<h4>Favourite result:</h4>
+					<img src="blend/face1-face2.jpg">
+					<!-- <table>
+					  <tr>
+					  	<td><img src="img/face1.jpg" width=100% class="tableimg"></td>
+						<td><img src="img/face2.jpg" width=100% class="tableimg"></td>
+					  </tr>
+					</table> -->
+					<p>This is a blending on multiple resolution scales. As the following figures show, I get the laplacian stack of both images and the gaussian stack of the mask. On each level, we use the corresponding mask to blend the two corresponding images on laplacian stack. In the end, we add these blending on multiresolutions to get the final results. The gussian stack of the mask ensures that the extent transition is best suitable for the frequencies at that level.</p>
+					<img src="blend/stack_face1.jpg">
+					<img src="blend/stack_face2.jpg">
+					<img src="blend/stack_mask.jpg">
+					<img src="blend/stack_blend.jpg">
+					<h4>Other cool results!</h4>
+					
+					<table align=center>
+					 	<tr>
+					  		<td width=50%><img src="blend/oraple.jpg" width=100% class="tableimg"></td>
+							<td width=50%><img src="blend/doges-orange-tree.jpg" width=100% class="tableimg"></td>
+					  	</tr>
+					</table>
+					<h5 align='center'>Oraple and Orandoge!!</h5>
+					<table>
+					 	<tr>
+					  		<td><img src="img/doges.jpg" width=100% class="tableimg"></td>
+							<td><img src="img/orange-tree.jpg" width=100% class="tableimg"></td>
+					  		<td><img src="img/mask-doges-orange-tree.jpg" width=100% class="tableimg"></td>
+					  	</tr>
+					 	<tr>
+					  		<td align="center">doges</td>
+					  		<td align="center">orange tree</td>
+					  		<td align="center">mask</td>
+					  	</tr>
+					 </table>
+					<h4>Failures and faces:</h4>
+					<p> Although my default mask works excellently for the oraple instance, it creates a lot of halos when I try to blend two faces at first. We can see that face edges and eyes are abrupt edges that are easy to detected if not aligned perfectly. Thus I use a mask that has a quick transition in the middle to improve this. Compare the following: </p>
+
+					<table align=center>
+					 	<tr>
+					  		<td align="center">default mask</td>
+					  		<td align="center">mask for faces</td>
+					  	</tr>
+					  	<tr>
+					  		<td><img src="img/mask-default.jpg" width=100% class="tableimg"></td>
+					  		<td><img src="img/mask-face1-face2.jpg" width=100% class="tableimg"></td>
+					  	</tr>
+					 	<tr>
+					  		<td><img src="blend/face1-face2-default.jpg" width=100% class="tableimg"></td>
+					  		<td><img src="blend/face1-face2.jpg" width=100% class="tableimg"></td>
+					  	</tr>
+					  	<tr>
+					  		<td><img src="blend/face3-face4-default.jpg" width=100% class="tableimg"></td>
+					  		<td><img src="blend/face3-face4.jpg" width=100% class="tableimg"></td>
+					  	</tr>
+					</table>
+
+				<h4>Bell and Whistles(Use color to enhance the effect)</h4>
+					<p>Bed on Sea:</p>
+					<img src="blend/sea-bed.jpg">
+					<img src="blend/sea-pyramid.jpg">
+					<img src="blend/bed-pyramid.jpg">
+					<img src="blend/mask-pyramid.jpg">
+				</div>
+				<h4>Last words</h4>
+				<p>The best part of this project is to see how two images come together to form a completely new effect. I also like how an image can be decomposed to different frequencies to reveal the secrets behind it.</p>
+			</div>
+		</div>
+		
+	</div>
+	<div id="footer">
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
